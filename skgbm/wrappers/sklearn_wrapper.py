@@ -12,7 +12,7 @@ class _SklearnWrapper(_GBMWrapper):
         return np.squeeze(self.estimator.apply(X))
     
     def trees_to_dataframe(self):
-        return sklearn_trees_to_dataframe(self)
+        return sklearn_trees_to_dataframe(self.estimator)
     
     def learning_rate(self):
         return self.estimator.learning_rate
