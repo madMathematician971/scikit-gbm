@@ -23,7 +23,7 @@ class _XgboostWrapper(_GBMWrapper):
         return self.estimator._Booster.predict(xgb.DMatrix(X), pred_leaf=True)
     
     def trees_to_dataframe(self):
-        return xgboost_trees_to_dataframe(self)
+        return xgboost_trees_to_dataframe(self.estimator)
     
     def learning_rate(self):
         eta = self.config['learner']['gradient_booster']['updater'] \
